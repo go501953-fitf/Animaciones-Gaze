@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <a-scene>
+        <a-camera>
+            <a-cursor fuse="true"></a-cursor>
+        </a-camera>
+        <a-sky color="#649CCC"></a-sky>
+        <a-plane position="0 0 0" width="20" height="20" rotation="-90 0 0" color="#298531"></a-plane>
+        <a-assets>
+            <a-asset-item id="hongo" src="./hongo.glb"></a-asset-item>
+            <a-asset-item id="cubo" src="./cubo.glb"></a-asset-item>
+            <a-asset-item id="coin" src="./MarioCoin.glb"></a-asset-item>
+        </a-assets>
+        <a-entity gltf-model="#hongo" rotation="0 -90 0" position="5 2 -1"
+        animation="
+        property:position;
+        from:5 2 -1;
+        to:5 0 -1;
+        dur:2000;
+        startEvents:click;
+        "
+        ></a-entity>
+        <a-entity gltf-model="#cubo" position="-7 3 0" rotation="0 -90 0"
+        animation="
+        property:visible;
+        from:true;
+        to:false;
+        startEvents:click;
+        "
+        ></a-entity>
+
+        <a-entity gltf-model="#coin" position="-2 3 0" rotation="0 90 0"
+        animation="
+        property:rotation;
+        from:0 90 0;
+        to:0 270 0;
+        startEvents:click;
+        "
+        ></a-entity>
+
+    </a-scene>
+</body>
+
+</html>
